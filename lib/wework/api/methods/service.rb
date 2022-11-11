@@ -51,10 +51,6 @@ module Wework
         def get_order(orderid)
           post 'service/get_order', {suite_id: suite_id, orderid: orderid}
         end
-
-        def dial_fee_phone(caller, auth_corpid, callee)
-          post "service/dial", {caller: caller, auth_corpid: auth_corpid, callee: callee}
-        end
       end
     end
   end
