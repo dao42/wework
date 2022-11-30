@@ -12,6 +12,10 @@ module Wework
           message_send user_ids, department_ids, {text: {content: content}, msgtype: 'text'}
         end
 
+        def markdown_message_send user_ids, department_ids, content
+          message_send user_ids, department_ids, {markdown: {content: content}, msgtype: 'markdown'}
+        end
+
         def image_message_send user_ids, department_ids, media_id
           message_send user_ids, department_ids, {image: {media_id: media_id}, msgtype: 'image'}
         end
@@ -34,6 +38,10 @@ module Wework
 
         def news_message_send user_ids, department_ids, news=[]
           message_send user_ids, department_ids, {news: {articles: news}, msgtype: 'news'}
+        end
+
+        def mpnews_message_send user_ids, department_ids, mpnews=[]
+          message_send user_ids, department_ids, {mpnews: {articles: mpnews}, msgtype: 'mpnews'}
         end
         
         def templatecard_message_send user_ids, department_ids, templatecard={}
