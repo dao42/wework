@@ -8,44 +8,44 @@ module Wework
           post 'message/send', { touser: user_id, msgtype: 'miniprogram_notice', miniprogram_notice: miniprogram_notice, **options }
         end
 
-        def text_message_send user_ids, department_ids, content
-          message_send user_ids, department_ids, {text: {content: content}, msgtype: 'text'}
+        def text_message_send user_ids, department_ids, content, options={}
+          message_send user_ids, department_ids, {text: {content: content}, msgtype: 'text', **options}
         end
 
-        def markdown_message_send user_ids, department_ids, content
-          message_send user_ids, department_ids, {markdown: {content: content}, msgtype: 'markdown'}
+        def markdown_message_send user_ids, department_ids, content, options={}
+          message_send user_ids, department_ids, {markdown: {content: content}, msgtype: 'markdown', **options}
         end
 
-        def image_message_send user_ids, department_ids, media_id
-          message_send user_ids, department_ids, {image: {media_id: media_id}, msgtype: 'image'}
+        def image_message_send user_ids, department_ids, media_id, options={}
+          message_send user_ids, department_ids, {image: {media_id: media_id}, msgtype: 'image', **options}
         end
 
-        def voice_message_send user_ids, department_ids, media_id
-          message_send user_ids, department_ids, {voice: {media_id: media_id}, msgtype: 'voice'}
+        def voice_message_send user_ids, department_ids, media_id, options={}
+          message_send user_ids, department_ids, {voice: {media_id: media_id}, msgtype: 'voice', **options}
         end
 
-        def file_message_send user_ids, department_ids, media_id
-          message_send user_ids, department_ids, {file: {media_id: media_id}, msgtype: 'file'}
+        def file_message_send user_ids, department_ids, media_id, options={}
+          message_send user_ids, department_ids, {file: {media_id: media_id}, msgtype: 'file', **options}
         end
 
-        def video_message_send user_ids, department_ids, video={}
-          message_send user_ids, department_ids, {video: video, msgtype: 'video'}
+        def video_message_send user_ids, department_ids, video={}, options={}
+          message_send user_ids, department_ids, {video: video, msgtype: 'video', **options}
         end
 
-        def textcard_message_send user_ids, department_ids, textcard={}
-          message_send user_ids, department_ids, {textcard: textcard, msgtype: 'textcard'}
+        def textcard_message_send user_ids, department_ids, textcard={}, options={}
+          message_send user_ids, department_ids, {textcard: textcard, msgtype: 'textcard', **options}
         end
 
-        def news_message_send user_ids, department_ids, news=[]
-          message_send user_ids, department_ids, {news: {articles: news}, msgtype: 'news'}
+        def news_message_send user_ids, department_ids, news=[], options={}
+          message_send user_ids, department_ids, {news: {articles: news}, msgtype: 'news', **options}
         end
 
-        def mpnews_message_send user_ids, department_ids, mpnews=[]
-          message_send user_ids, department_ids, {mpnews: {articles: mpnews}, msgtype: 'mpnews'}
+        def mpnews_message_send user_ids, department_ids, mpnews=[], options={}
+          message_send user_ids, department_ids, {mpnews: {articles: mpnews}, msgtype: 'mpnews', **options}
         end
         
-        def templatecard_message_send user_ids, department_ids, templatecard={}
-          message_send user_ids, department_ids, {template_card: templatecard, msgtype: 'template_card'}
+        def templatecard_message_send user_ids, department_ids, templatecard={}, options={}
+          message_send user_ids, department_ids, {template_card: templatecard, msgtype: 'template_card', **options}
         end        
 
         private
